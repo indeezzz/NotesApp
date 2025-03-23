@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Core.Interfaces
 {
-    public interface INotesRepository
+    public interface IRepository<T> where T : class
     {
-        Task AddAsync(Notes note);
-        Task<IEnumerable<Notes>> GetAllAsync();
-        Task<Notes?> GetByIdAsync(Guid id);
-        Task UpdateAsync(Notes note);
+        Task AddAsync(T model);
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<T?> GetByIdAsync(Guid id);
+        Task UpdateAsync(T model);
         Task DeleteAsync(Guid id);
     }
 }
