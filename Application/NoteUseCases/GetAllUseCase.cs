@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace Application.UseCases
 {
-    public class GetAllNotesUseCase
+    public class GetAllUseCase<TModel> : IGetAllUseCase<TModel> where TModel : class
     {
-        private readonly INotesRepository _repository;
+        private readonly IRepository<TModel> _repository;
 
-        public GetAllNotesUseCase(INotesRepository repository)
+        public GetAllUseCase(IRepository<TModel> repository)
         {
             _repository = repository;
         }
 
-        public async Task<IEnumerable<Notes>> ExecuteAsync()
+        public async Task<IEnumerable<TModel>> GetAllAsync()
         {
             return await _repository.GetAllAsync();
         }
