@@ -5,6 +5,10 @@ namespace ConsoleApplication.Libs
 {
     public class UpdateProperties<TModel> where TModel : class
     {
+        protected UpdateProperties() 
+        {
+
+        }
         public static void UpdatePropertiesModel(TModel model, string[] excludedProperties, IEnumerable<Tags> allTags)
         {
             var properties = typeof(TModel).GetProperties();
@@ -13,7 +17,7 @@ namespace ConsoleApplication.Libs
             {
                 if (excludedProperties.Contains(property.Name))
                 {
-                    continue;
+                    continue; 
                 }
 
                 if (property.Name == nameof(Notes.TagsId) && property.PropertyType == typeof(List<Guid>))

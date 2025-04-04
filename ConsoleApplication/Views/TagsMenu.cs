@@ -4,11 +4,6 @@ namespace ConsoleApplication.Views
 {
     public class TagsMenu : Menu
     {
-        private static TagsCreateController? _tagsCreateController;
-        private static TagsGetAllController? _tagsGetAllController;
-        private static TagsGetByIdController? _tagsGetByIdController;
-        private static TagsUpdateController? _tagsUpdateController;
-        private static TagsDeleteController? _tagsDeleteController;
         public TagsMenu(
             TagsCreateController tagsCreateController,
             TagsGetAllController tagsGetAllController,
@@ -16,11 +11,11 @@ namespace ConsoleApplication.Views
             TagsUpdateController tagsUpdateController,
             TagsDeleteController tagsDeleteController) : base(new Dictionary<string, Func<Task>>
         {
-            { "1", () => _tagsCreateController!.CreateTag()},
-            { "2", () => _tagsGetAllController!.GetAllTags()},
-            { "3", () => _tagsGetByIdController!.GetTagById() },
-            { "4", () => _tagsUpdateController!.UpdateTag() },
-            { "5", () => _tagsDeleteController!.DeleteTag() }
+            { "1", () => tagsCreateController!.CreateTag()},
+            { "2", () => tagsGetAllController!.GetAllTags()},
+            { "3", () => tagsGetByIdController!.GetTagById() },
+            { "4", () => tagsUpdateController!.UpdateTag() },
+            { "5", () => tagsDeleteController!.DeleteTag() }
         }, new Dictionary<string, string>
         {
             { "1", "Создать тег" },
@@ -30,11 +25,7 @@ namespace ConsoleApplication.Views
             { "5", "Удалить тег" }
         })
         {
-            _tagsCreateController = tagsCreateController;
-            _tagsGetAllController = tagsGetAllController;
-            _tagsGetByIdController = tagsGetByIdController;
-            _tagsUpdateController = tagsUpdateController;
-            _tagsDeleteController = tagsDeleteController;
+
         }
 
         protected override void DisplayHeader()

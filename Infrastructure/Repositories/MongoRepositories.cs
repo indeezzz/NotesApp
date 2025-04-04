@@ -52,7 +52,7 @@ namespace Infrastructure.Repositories
             await _Collection.UpdateManyAsync(filter, update);
         }
 
-        private object GetIdProperty(TModel model)
+        private static object GetIdProperty(TModel model)
         {
             var idProperty = typeof(TModel).GetProperty("Id");
             if (idProperty == null)

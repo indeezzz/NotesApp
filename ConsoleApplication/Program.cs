@@ -14,7 +14,12 @@ class Program
 {
     private static readonly string connectionString = "mongodb://localhost:27017";
     private static readonly string databaseName = "NotesDatabase";
- 
+
+    protected Program()
+    {
+
+    }
+
     static async Task Main(string[] args)
     {
         try

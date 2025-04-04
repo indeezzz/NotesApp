@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Interfaces
 {
-    public interface IDeleteUseCase<TModel> where TModel : class
+    public interface IDeleteUseCase
     {
         Task DeleteAsync(Guid id);
     }

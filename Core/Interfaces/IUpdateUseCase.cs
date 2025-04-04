@@ -1,6 +1,6 @@
 ﻿namespace Core.Interfaces
 {
-    public interface IUpdateUseCase<TModel> where TModel : class
+    public interface IUpdateUseCase<in TModel> where TModel : class
     {
         Task UpdateAsync(TModel model);
     }

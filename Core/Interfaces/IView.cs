@@ -1,6 +1,6 @@
 ﻿namespace Core.Interfaces
 {
-    public interface IView<TModel>
+    public interface IView<in TModel>
     {
         void Display(TModel model);
     }

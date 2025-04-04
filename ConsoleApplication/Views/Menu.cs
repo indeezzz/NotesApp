@@ -12,7 +12,7 @@
         }
 
         public async Task ShowAsync()
-        {
+        { 
             while (true)
             {
                 Console.Clear();
